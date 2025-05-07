@@ -1,1 +1,272 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test/Learning - Linux Commands & DevOps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #6046a9;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #6046a9;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .command-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #6046a9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .command {
+            color: #d63384;
+            font-weight: bold;
+        }
+        
+        .devops-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        
+        .card {
+            background: linear-gradient(45deg, #43cea2, #185a9d);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: calc(50% - 10px);
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:nth-child(2n) {
+            background: linear-gradient(45deg, #ff8008, #ffc837);
+        }
+        
+        .card:nth-child(3n) {
+            background: linear-gradient(45deg, #4568dc, #b06ab3);
+        }
+        
+        .card:nth-child(4n) {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Test/Learning</h1>
+            <p class="subtitle">A Colorful Guide to Linux Commands and DevOps</p>
+        </header>
+        
+        <div class="content-section">
+            <h2>Essential Linux Commands</h2>
+            
+            <div class="command-block">
+                <p><span class="command">ls</span> - List directory contents</p>
+                <p>Examples:</p>
+                <p>ls -la (list all files including hidden ones with details)</p>
+                <p>ls -lh (list with human-readable file sizes)</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">cd</span> - Change directory</p>
+                <p>Examples:</p>
+                <p>cd /path/to/directory (go to specific directory)</p>
+                <p>cd .. (go up one directory)</p>
+                <p>cd ~ (go to home directory)</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">mkdir</span> - Create directories</p>
+                <p>Examples:</p>
+                <p>mkdir new_directory</p>
+                <p>mkdir -p parent/child/grandchild (create nested directories)</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">grep</span> - Search text using patterns</p>
+                <p>Examples:</p>
+                <p>grep "pattern" filename</p>
+                <p>grep -r "pattern" directory/ (recursive search)</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">find</span> - Search for files in directory hierarchy</p>
+                <p>Examples:</p>
+                <p>find /path -name "*.txt"</p>
+                <p>find /path -type f -mtime -7 (files modified in last 7 days)</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Advanced Linux Commands</h2>
+            
+            <div class="command-block">
+                <p><span class="command">sed</span> - Stream editor for filtering and transforming text</p>
+                <p>Examples:</p>
+                <p>sed 's/old-text/new-text/g' filename</p>
+                <p>sed -i '5d' filename (delete line 5)</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">awk</span> - Pattern scanning and processing language</p>
+                <p>Examples:</p>
+                <p>awk '{print $1}' filename (print first column)</p>
+                <p>awk -F: '{print $1, $3}' /etc/passwd (print columns 1 and 3)</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">tar</span> - Archiving utility</p>
+                <p>Examples:</p>
+                <p>tar -cvf archive.tar files/ (create archive)</p>
+                <p>tar -xvf archive.tar (extract archive)</p>
+                <p>tar -czvf archive.tar.gz files/ (create compressed archive)</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>DevOps Concepts and Tools</h2>
+            
+            <div class="devops-cards">
+                <div class="card">
+                    <h3>Continuous Integration (CI)</h3>
+                    <p>Automatically integrate code changes from multiple contributors into a shared repository. Popular tools include Jenkins, GitLab CI, and GitHub Actions.</p>
+                    <p>CI ensures that new code doesn't break existing functionality by running automated tests on every commit.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Continuous Deployment (CD)</h3>
+                    <p>Automatically deploy applications to production or staging environments after passing testing phases.</p>
+                    <p>CD reduces manual processes and provides faster feedback loops for development teams.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Infrastructure as Code (IaC)</h3>
+                    <p>Manage infrastructure through code instead of manual processes. Tools like Terraform, Ansible, and CloudFormation allow versioning, reuse, and consistent deployments.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Containerization</h3>
+                    <p>Package applications with their dependencies into isolated units. Docker is the most popular containerization tool, providing consistency across environments.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Kubernetes</h3>
+                    <p>Container orchestration platform that automates application deployment, scaling, and management across clusters of hosts.</p>
+                    <p>Key concepts: Pods, Services, Deployments, ConfigMaps.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Monitoring and Logging</h3>
+                    <p>Tools like Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), and Datadog provide visibility into application performance and system health.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Common DevOps Commands</h2>
+            
+            <div class="command-block">
+                <p><span class="command">docker build</span> - Build an image from a Dockerfile</p>
+                <p>docker build -t myapp:latest .</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">docker run</span> - Run a container from an image</p>
+                <p>docker run -d -p 8080:80 --name mycontainer myapp:latest</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">kubectl</span> - Kubernetes command-line tool</p>
+                <p>kubectl get pods</p>
+                <p>kubectl apply -f deployment.yaml</p>
+                <p>kubectl logs pod-name</p>
+            </div>
+            
+            <div class="command-block">
+                <p><span class="command">git</span> - Version control commands</p>
+                <p>git clone https://github.com/username/repo.git</p>
+                <p>git checkout -b new-branch</p>
+                <p>git commit -m "Message"</p>
+                <p>git push origin branch-name</p>
+            </div>
+        </div>
+        
+        <footer>
+            Test/Learning - A colorful guide to Linux commands and DevOps concepts
+        </footer>
+    </div>
+</body>
+</html>
