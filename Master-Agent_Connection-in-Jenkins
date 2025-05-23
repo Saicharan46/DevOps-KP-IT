@@ -1,0 +1,13 @@
+Master and Slave node connection:
+
+1) On Jenkins master:
+Change directory to cd  ~/.ssh or /home/ubuntu/.ssh
+Generate a new key pair using command ssh-keygen two keys will be generated one is public and one is private key
+
+2) On Slave/Agent node:  Java should be installed before connecting node to Jenkins
+Copy the generated public key from master node and paste it in ~/.ssh/authorizedkeys 
+Use cd ~/ssh and sudo vim authorizedkeys to open the folder and paste the public key of master node/server here
+
+3) In Jenkins:
+ Jenkins Dashboard Go to manage Jenkins  Nodes Add Node
+ Name the node and choose shh connection using private key. Provide the Public Ip address of the  agent and username of the agent and add the private key here from the master node which was generated earlier
